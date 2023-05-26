@@ -31,17 +31,12 @@ Function Get-RandomPassword {
  
     -join (Get-Random -Count $PasswordLength -InputObject $StringSet)
 }
- 
-#Call the function to generate random password of 8 characters
-Get-RandomPassword -PasswordLength 8
- 
-#Sample Output: glx`FC>Y
 
 # Actual remediation! Based on https://cloudinfra.net/create-a-local-admin-using-intune-and-powershell/
 
 $userName = "cloud-local-admin"
 $userexist = (Get-LocalUser).Name -Contains $userName
-$password = Get-RandomPassword
+$password = Get-RandomPassword | ConvertTo-SecureString -AsPlainText -Force
 
 if ($userexist -eq $false) {
     try { 
