@@ -1,14 +1,14 @@
 <#
 .Synopsis
-    Remediation script to start the WinRM service
+    Remediation script to set the DefaultOpenOptionSettings to "Desktop"
 .DESCRIPTION
-    This remediation script will start the WinRM service and sets the running startup type to automatic
+    This remediation script will set the DefaultOpenOptionSettings to "Desktop"
 .EXAMPLE
-    Fill in the service with each other service that you want to start automatically
+    You can use this script to remediate the value of any other registry value
 .NOTES
     Filename: Remediate_WinRM_Service.ps1
     Author: Jeroen Ebus (https://manage-the.cloud) 
-    Modified date: 2023-05-30
+    Modified date: 2023-12-16
     Version 1.0 - Release notes/details
 #>
 
