@@ -13,6 +13,7 @@
 #>
 
 # Dection script! Based on https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/Change-Registry-Key-Generic/detect-regkey.ps1
+# Credits for running Powershell always in 64-bit context: https://call4cloud.nl/2021/05/the-sysnative-witch-project/
 
 If ($ENV:PROCESSOR_ARCHITEW6432 -eq "AMD64") {
     Try {
@@ -24,13 +25,13 @@ If ($ENV:PROCESSOR_ARCHITEW6432 -eq "AMD64") {
     Exit
 }
 
-##Enter the path to the registry key for example HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+## Enter the path to the registry key for example HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 $regpath = "HKCU:\Software\Microsoft\Office\16.0\Common\FLORA\All"
 
-##Enter the name of the registry key for example EnableLUA
+## Enter the name of the registry key for example EnableLUA
 $regname = "DefaultOpenOptionSettings"
 
-##Enter the value of the registry key we are checking for, for example 0
+## Enter the value of the registry key we are checking for, for example 0
 $regvalue = "3"
 
 Try {
